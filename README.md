@@ -1,2 +1,2 @@
-# Learn-KIvyMD
+# Learn-KivyMD
 Use this repository for learing kivymd 
