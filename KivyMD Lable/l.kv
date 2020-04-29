@@ -1,0 +1,12 @@
+#:kivy 1.0
+Label:
+    id: sLinksLabel
+    text: 'Load Up [ref=http://google.com]some_link[/ref]'
+    text_size: self.width, None
+    size_hint_y: None
+    pos_hint:{'center_x':0.5, 'y': 0.50}
+    size: (150, 44)
+    markup: True
+    on_ref_press:
+        import webbrowser
+        webbrowser.open(args[1])

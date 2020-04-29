@@ -5,10 +5,9 @@ Config.set('graphics', 'height', '740')
 
 from kivymd.app import MDApp
 from kivy.lang import Builder
-from kivymd.uix.label import MDLabel
 
 class MyApp(MDApp):
     def build(self):
-        return Builder.load_file("LoginScreen.kv")
+        return Builder.load_file("l.kv")
 
 MyApp().run()
