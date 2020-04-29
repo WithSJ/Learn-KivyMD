@@ -1,2 +1,2 @@
 # Learn-KivyMD
-Use this repository for learing kivymd 
+I am strat learing kivy 
