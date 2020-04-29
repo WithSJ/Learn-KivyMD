@@ -13,12 +13,9 @@ Screen:
         hint_text: "Password"
         pos_hint: {"center_x":0.5, "center_y":0.52}
         size_hint: 0.7,0.08
+        password: True
     MDRaisedButton:
         text: "Login"
         pos_hint: {"center_x":0.5, "center_y":0.45}
         size_hint: 0.4,0.04
-    
-    MDFlatButton:
-        text: "Login"
-        pos_hint: {"center_x":0.5, "center_y":0.4}
-        size_hint: 0.4,0.04
+        on_release: app.show_alert_dialog()

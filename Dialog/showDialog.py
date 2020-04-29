@@ -1,23 +1,28 @@
-from kivy.config import Config
-Config.set('graphics', 'width', '360')
-Config.set('graphics', 'height', '740')
-# fix size of Kivy App Window 
+from kivy.lang import Builder
 
 from kivymd.app import MDApp
-from kivy.lang import Builder
-from kivymd.uix.label import MDLabel
-from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
+from kivymd.uix.dialog import MDDialog
 
-class MyApp(MDApp):
+KV = '''
+FloatLayout:
+
+    MDFlatButton:
+        text: "ALERT DIALOG"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        on_release: app.show_alert_dialog()
+'''
+
+
+class Example(MDApp):
     dialog = None
+
     def build(self):
-        return Builder.load_file("LoginScreen.kv")
-    
+        return Builder.load_string(KV)
+
     def show_alert_dialog(self):
         if not self.dialog:
             self.dialog = MDDialog(
-                size_hint= (0.8,0.5),
                 text="Discard draft?",
                 buttons=[
                     MDFlatButton(
@@ -30,4 +35,5 @@ class MyApp(MDApp):
             )
         self.dialog.open()
 
-MyApp().run()
+
+Example().run()
